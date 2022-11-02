@@ -12,9 +12,9 @@ contract MyNFT is ERC721URIStorage, Ownable {
 
     Counters.Counter private _tokenIds;
 
-    constructor() ERC721("RJ Cafe's", "RJC") {}
+    constructor() ERC721("RJ Cafe", "RJC") {}
 
-    function minNFT(address recipient, string memory tokenURI)
+    function mintNFT(address recipient, string memory tokenURI)
         public
         onlyOwner
         returns (uint256)

@@ -8,15 +8,17 @@
 async function main() {
     const MyNFT = await hre.ethers.getContractFactory("MyNFT");
     const myNFT = await MyNFT.deploy();
-    await myNFT.deployed();
+    // await myNFT.deployed();
     console.log("Contract Address:", myNFT.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-});
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exitCode = 1;
+    });
 
 //
